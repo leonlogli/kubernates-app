@@ -30,8 +30,23 @@ Create a Kubernetes deployment:
 kubectl create deployment kubernates-app --image=username/kubernates-app
 ```
 
-Get a Kubernetes deployments to check the status:
+To Get a Kubernetes deployments and check the status, run:
 
 ```bash
 kubectl get deployments
+```
+
+Expose the deployment as a Kubernetes service:
+
+```bash
+kubectl expose deployment kubernates-app --type=LoadBalancer --port=8080
+```
+
+Get the external IP address of the service:
+
+```bash
+kubectl get services
+# the kubernates-app service will have pending external ip because we use minikube in local
+# to get an external ip for the kubernates-app service and open the generated url in the browser
+minikube service kubernates-app
 ```
