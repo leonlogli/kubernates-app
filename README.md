@@ -50,3 +50,9 @@ kubectl get services
 # to get an external ip for the kubernates-app service and open the generated url in the browser
 minikube service kubernates-app
 ```
+
+Scaling to 3 pods/containers:
+
+```bash
+kubectl scale deployment/kubernates-app --replicas=3
+```
